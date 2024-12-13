@@ -1,5 +1,5 @@
-import * as THREE from "../../node_modules/three/build/three.module.js";
-import { ARButton } from "../../node_modules/three/examples/jsm/webxr/ARButton.js";
+import * as THREE from "three";
+import { ARButton } from "three/examples/jsm/webxr/ARButton.js";
 
 // test code from https://www.npmjs.com/package/three
 
