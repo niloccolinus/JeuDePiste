@@ -26,10 +26,10 @@ const renderer = new THREE.WebGLRenderer({
 });
 
 renderer.setSize(width, height);
-renderer.xr.enabled = true;
+renderer.xr.enabled = true; // activer la xr
 renderer.setAnimationLoop(animate);
 document.body.appendChild(renderer.domElement);
-document.body.appendChild(ARButton.createButton(renderer));
+document.body.appendChild(ARButton.createButton(renderer)); // ajouter bouton start AR
 
 // animation
 
