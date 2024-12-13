@@ -1,0 +1,35 @@
+{
+  "name": "Le cryptide du Nil",
+  "short_name": "Cryptide",
+  "description": "Découvrez les secrets du Nil",
+  "theme_color": "#023b4e",
+  "background_color": "#add8e6",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "src/icons/Elephant--Streamline-Twemoji.svg",
+      "sizes": "32x32",
+      "type": "image/svg",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "src/screenshots/interface-narrow.jpg",
+      "sizes": "1080x1980",
+      "type": "image/jpg",
+      "form_factor": "narrow",
+      "label": "Interface de l'application Cryptide"
+    },
+    {
+      "src": "src/screenshots/interface-wide.png",
+      "sizes": "1913x1037",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Interface de l'application Cryptide"
+    }
+  ]
+}
