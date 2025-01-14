@@ -1,21 +1,107 @@
-function updateHeaderLinks() {
-  const steps = [
-    { id: "step2-link", storageKey: "step2-unlocked", href: "step2.html" },
-    { id: "step3-link", storageKey: "step3-unlocked", href: "step3.html" },
-    { id: "step4-link", storageKey: "step4-unlocked", href: "step4.html" },
-    { id: "step5-link", storageKey: "step5-unlocked", href: "step5.html" },
-  ];
+// données des étapes
+// TODO : fonction pour hasher les mdp
+const stepsData = [
+  {
+    id: "step2-link",
+    storageKey: "step2-unlocked",
+    href: "step2.html",
+    correctPassword: "elephant",
+  },
+  {
+    id: "step3-link",
+    storageKey: "step3-unlocked",
+    href: "step3.html",
+    correctPassword: "elephant",
+  },
+  {
+    id: "step4-link",
+    storageKey: "step4-unlocked",
+    href: "step4.html",
+    correctPassword: "elephant",
+  },
+  {
+    id: "step5-link",
+    storageKey: "step5-unlocked",
+    href: "step5.html",
+    correctPassword: "elephant",
+  },
+];
 
-  steps.forEach((step) => {
+// Fonction pour mettre à jour les liens du header
+function updateHeaderLinks() {
+  stepsData.forEach((step) => {
     const link = document.getElementById(step.id);
+
     if (localStorage.getItem(step.storageKey)) {
+      // Active dynamiquement le lien si l'étape est déverrouillée
       link.removeAttribute("role");
       link.removeAttribute("aria-disabled");
       link.setAttribute("href", step.href);
-      link.innerHTML = step.href.match(/\d+/)[0]; // Remplace cadenas par numéro
+      link.innerHTML = step.href.match(/\d+/)[0]; // Remplace l'icône cadenas par le numéro
     }
   });
 }
 
-// Appeler la fonction au chargement
-document.addEventListener("DOMContentLoaded", updateHeaderLinks);
+// Fonction pour activer dynamiquement le lien de l'étape déverrouillée
+function unlockStepLink(stepLink, step) {
+  if (stepLink) {
+    stepLink.removeAttribute("role");
+    stepLink.removeAttribute("aria-disabled");
+    stepLink.setAttribute("href", step.href);
+    stepLink.innerHTML = step.href.match(/\d+/)[0].replace("step", ""); // Affiche le numéro de l'étape
+  }
+}
+
+function handlePasswordProtection() {
+  // Identifier la page actuelle : page = step2, step3, ...
+  const page = document.body.getAttribute("data-page");
+  if (!page) return;
+
+  // Trouver les données de l'étape actuelle
+  // Explication : recherche dans stepsData l'étape correspondant à la page actuelle
+  // Vérifie si storageKey de chaque étape commence par la valeur de page (ex "step2")
+  const step = stepsData.find((step) => step.storageKey.startsWith(page));
+
+  if (!step) return; // Sortir si aucune correspondance
+
+  // Éléments du DOM
+  const passwordPopup = document.getElementById("password-popup");
+  const passwordForm = document.getElementById("password-form");
+  const errorMessage = document.getElementById("error-message");
+  const stepLink = document.getElementById(step.id);
+
+  // Si l'étape n'est pas déverrouillée afficher le formulaire
+  // TODO : aussi masquer le contenu de la page
+  if (!localStorage.getItem(step.storageKey)) {
+    passwordPopup.style.display = "block";
+
+    passwordForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      // on récupère le mot de passe saisi par l'utilisateur lors de l'envoi du formulaire
+      const password = document.getElementById("password").value;
+
+      // Si mot de passe correct :
+      if (password === step.correctPassword) {
+        localStorage.setItem(step.storageKey, true); // on déverrouille l'étape
+        passwordPopup.style.display = "none"; // on masque le formulaire
+
+        // Met à jour dynamiquement le lien dans le header
+        unlockStepLink(stepLink, step);
+
+        alert("Étape déverrouillée !");
+      } else {
+        // Message d'erreur en cas de mot de passe incorrect
+        errorMessage.style.display = "block";
+      }
+    });
+  } else {
+    // Si l'étape est déjà déverrouillée, activer le lien directement
+    unlockStepLink(stepLink, step);
+  }
+}
+
+// Exécuter les fonctions au chargement du DOM
+document.addEventListener("DOMContentLoaded", () => {
+  updateHeaderLinks();
+  handlePasswordProtection();
+});
