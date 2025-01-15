@@ -1,58 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Étape 3 - Le cryptide du Nil</title>
-    <link rel="stylesheet" href="src/styles/styles.css" />
-    <script src="src/scripts/scripts.js" defer></script>
-  </head>
-  <body data-page="step3">
-    <header>
-      <nav>
-        <ul>
-          <li><a id="step1-link" href="index.html">1</a></li>
-          <li>
-            <a id="step2-link" role="link" aria-disabled="true"
-              ><img src="src/icons/lock-solid.svg" alt="cadenas"
-            /></a>
-          </li>
-          <li>
-            <a id="step3-link" role="link" aria-disabled="true"
-              ><img src="src/icons/lock-solid.svg" alt="cadenas"
-            /></a>
-          </li>
-          <li>
-            <a id="step4-link" role="link" aria-disabled="true"
-              ><img src="src/icons/lock-solid.svg" alt="cadenas"
-            /></a>
-          </li>
-          <li>
-            <a id="step5-link" role="link" aria-disabled="true"
-              ><img src="src/icons/lock-solid.svg" alt="cadenas"
-            /></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Étape 3 - Le cryptide du Nil</title>
+        <link rel="stylesheet" href="src/styles/styles.css" />
+        <script src="src/scripts/scripts.js" defer></script>
+    </head>
+    <body data-page="step3">
+        <header>
+            <nav>
+                <ul>
+                    <li><a id="home-link" href="index.html">1</a></li>
+                    <li>
+                        <a id="step1-link" role="link" aria-disabled="true"
+                            ><img src="src/icons/lock-solid.svg" alt="cadenas"
+                        /></a>
+                    </li>
+                    <li>
+                        <a id="step2-link" role="link" aria-disabled="true"
+                            ><img src="src/icons/lock-solid.svg" alt="cadenas"
+                        /></a>
+                    </li>
+                    <li>
+                        <a id="step3-link" role="link" aria-disabled="true"
+                            ><img src="src/icons/lock-solid.svg" alt="cadenas"
+                        /></a>
+                    </li>
+                    <li>
+                        <a id="step4-link" role="link" aria-disabled="true"
+                            ><img src="src/icons/lock-solid.svg" alt="cadenas"
+                        /></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-      <h1>Étape 3 - Le cryptide du Nil</h1>
-      <p>Résolvez l'énigme suivante pour révéler un nouvel indice !</p>
-    </main>
+        <main>
+            <h1>Étape 3 - Le cryptide du Nil</h1>
+        </main>
 
-    <!-- Popup pour le mot de passe -->
-    <div id="password-popup" style="display: none">
-      <form id="password-form">
-        <label for="password">Entrez le mot de passe :</label>
-        <input type="password" id="password" name="password" />
-        <button type="submit">Valider</button>
-      </form>
-      <p id="error-message" style="color: red; display: none">
-        Mot de passe incorrect
-      </p>
-    </div>
+        <div id="password-check" style="display: none">
+            <form id="password-form">
+                <p>Quelle était la solution de l'énigme précédente ?</p>
+                <label for="password">Réponse :</label>
+                <input type="password" id="password" name="password" />
+                <button type="submit">Valider</button>
+            </form>
+            <p id="error-message" style="color: red; display: none">Mot de passe incorrect</p>
+        </div>
 
-    <footer></footer>
-  </body>
+        <footer></footer>
+    </body>
 </html>

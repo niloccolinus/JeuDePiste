@@ -3,13 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Le cryptide du Nil</title>
+        <title>Étape 4 - Le cryptide du Nil</title>
         <link rel="stylesheet" href="src/styles/styles.css" />
-        <link rel="manifest" href="manifest.json" />
         <script src="src/scripts/scripts.js" defer></script>
-        <!--<script type="module" src="src/scripts/cube.js" defer></script>-->
     </head>
-    <body>
+    <body data-page="step4">
         <header>
             <nav>
                 <ul>
@@ -39,19 +37,18 @@
         </header>
 
         <main>
-            <h1>Le cryptide du Nil</h1>
-            <p>
-                Un étrange cryptide rôde dans les couloirs de l'ancienne usine à papier transformée en école de jeu
-                vidéo. Selon la légende, cette créature mystique a été aperçue pour la première fois à l'époque où
-                l'usine fonctionnait encore, et elle se cache dans les lieux.
-            </p>
-            <p>
-                Votre mission : résoudre une série d'énigmes pour révéler l'identité de la créature et trouver son
-                repaire.
-            </p>
-            <hr />
-            <p>Une créature ? Je suis sûr d'en avoir aperçu une grosse à l'étage... Quel animal c'était déjà ?</p>
+            <h1>Étape 4 - Le cryptide du Nil</h1>
         </main>
+
+        <div id="password-check" style="display: none">
+            <form id="password-form">
+                <p>Quelle était la solution de l'énigme précédente ?</p>
+                <label for="password">Réponse :</label>
+                <input type="password" id="password" name="password" />
+                <button type="submit">Valider</button>
+            </form>
+            <p id="error-message" style="color: red; display: none">Mot de passe incorrect</p>
+        </div>
 
         <footer></footer>
     </body>
