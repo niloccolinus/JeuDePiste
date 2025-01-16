@@ -14,22 +14,18 @@
       "sizes": "32x32",
       "type": "image/svg",
       "purpose": "any"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "src/screenshots/interface-narrow.jpg",
-      "sizes": "1080x1980",
-      "type": "image/jpg",
-      "form_factor": "narrow",
-      "label": "Interface de l'application Cryptide"
     },
     {
-      "src": "src/screenshots/interface-wide.png",
-      "sizes": "1913x1037",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Interface de l'application Cryptide"
+      "src": "src/icons/elephant_192px.svg",
+      "sizes": "any",
+      "type": "image/svg",
+      "purpose": "any"
+    },
+    {
+      "src": "src/icons/elephant_512px.svg",
+      "sizes": "any",
+      "type": "image/svg",
+      "purpose": "any"
     }
   ]
 }
