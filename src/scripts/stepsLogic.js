@@ -5,19 +5,19 @@ const stepsData = [
         id: "step1-link",
         storageKey: "step1-unlocked",
         href: "step1.html",
-        correctAnswer: getPasswordHash("distributeur"),
+        correctAnswer: -1580711874,
     },
     {
         id: "step2-link",
         storageKey: "step2-unlocked",
         href: "step2.html",
-        correctAnswer: getPasswordHash("tartiflette"),
+        correctAnswer: -2037067136,
     },
     {
         id: "step3-link",
         storageKey: "step3-unlocked",
         href: "step3.html",
-        correctAnswer: getPasswordHash("nessie"),
+        correctAnswer: -1048945229,
     },
     {
         id: "step4-link",
@@ -37,6 +37,17 @@ function getPasswordHash(pwd) {
     }
     return pwdHash;
 }
+
+// // Fonction temporaire pour générer les hash des réponses
+// function generateAnswerHashes() {
+//     const answers = ["distributeur", "tartiflette", "nessie"]; // Liste des réponses en clair
+//     answers.forEach((answer) => {
+//         console.log(`Réponse: ${answer}, Hash: ${getPasswordHash(answer)}`);
+//     });
+// }
+
+// // Exécuter cette fonction temporairement pour obtenir les hash
+// generateAnswerHashes();
 
 // Fonction principale pour gérer la logique d'une étape
 function handleStepLogic() {
