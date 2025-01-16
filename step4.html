@@ -3,15 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Étape 4 - Le cryptide du Nil</title>
+        <title>Fin - Le cryptide du Nil</title>
         <link rel="stylesheet" href="src/styles/styles.css" />
-        <script src="src/scripts/scripts.js" defer></script>
+        <script src="src/scripts/stepsLogic.js" defer></script>
+        <!-- <script type="module" src="src/scripts/cube.js" defer></script> -->
     </head>
     <body data-page="step4">
         <header>
             <nav>
                 <ul>
-                    <li><a id="home-link" href="index.html">1</a></li>
+                    <li><a id="home-link" href="index.html">0</a></li>
                     <li>
                         <a id="step1-link" role="link" aria-disabled="true"
                             ><img src="src/icons/lock-solid.svg" alt="cadenas"
@@ -37,18 +38,19 @@
         </header>
 
         <main>
-            <h1>Étape 4 - Le cryptide du Nil</h1>
-        </main>
+            <h1>Le cryptide du Nil</h1>
+            <h2>Félicitations !</h2>
 
-        <div id="password-check" style="display: none">
-            <form id="password-form">
-                <p>Quelle était la solution de l'énigme précédente ?</p>
-                <label for="password">Réponse :</label>
-                <input type="password" id="password" name="password" />
-                <button type="submit">Valider</button>
-            </form>
-            <p id="error-message" style="color: red; display: none">Mot de passe incorrect</p>
-        </div>
+            <section>
+                <p>
+                    Vous avez élucidé le nom du cryptide ! La légende dit que les noms ont un pouvoir, et que celleux
+                    qui connaissent le nom de cette mystérieuse créature se retrouvent soudain capables de la voir -
+                    mais seulement par le biais d'une caméra.
+                </p>
+                <p>Voyez par vous-même. Appuyez sur le bouton ci-dessous pour découvrir l'appparence du cryptide.</p>
+                <hr />
+            </section>
+        </main>
 
         <footer></footer>
     </body>
