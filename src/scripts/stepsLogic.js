@@ -69,6 +69,9 @@ function handleStepLogic() {
     const errorMessage = document.getElementById("error-message");
     const stepLink = nextStep ? document.getElementById(nextStep.id) : null;
 
+    // Si cette page ne contient pas les éléments attendus, quitter la fonction
+    if (!answerCheck || !answerForm || !continueSection) return;
+
     // Vérifier si une réponse correcte est déjà enregistrée
     const savedAnswer = localStorage.getItem(`${page}-answer`);
     if (savedAnswer) {
