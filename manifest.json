@@ -25,14 +25,14 @@
   "screenshots": [
     {
       "src": "src/screenshots/narrow.jpg",
-      "sizes": "516x950",
+      "sizes": "425x877",
       "type": "image/jpg",
       "form_factor": "narrow",
       "label": "Interface de l'application Cryptide"
     },
     {
       "src": "src/screenshots/wide.jpg",
-      "sizes": "1918x1023",
+      "sizes": "1918x1025",
       "type": "image/jpg",
       "form_factor": "wide",
       "label": "Interface de l'application Cryptide"
