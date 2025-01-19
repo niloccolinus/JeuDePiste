@@ -7,7 +7,7 @@ L'application peut être consultée en tant que site web à l'adresse https://le
 
 Le jeu commence lorsque vous scannez un QR code sur l'un des flyers déposés à l'entrée du bâtiment. Ce QR code donne accès à un lien vers la page d'accueil de l'application.
 
-Si vous acceptez de commencer à jouer, vous êtes redirigé-e vers la première étape : une enigme à résoudre en retrouvant l'empreinte du cryptide dans le bâtiment. Tant que la bonne réponse à la question n'a pas été saisie, il n'est pas possible de passer à l'étape suivante.
+Si vous acceptez de commencer à jouer, vous êtes redirigé-e vers la première étape : une énigme à résoudre en retrouvant l'empreinte du cryptide dans le bâtiment. Tant que la bonne réponse à la question n'a pas été saisie, il n'est pas possible de passer à l'étape suivante.
 
 Les autres étapes suivent le même principe : chacune va vous amener vers un nouvel endroit du bâtiment, où vous trouverez un indice permettant de débloquer l'étape suivante. À la fin du jeu, vous pouvez découvrir l'apparence du cryptide sous forme de modèle 3D.
 
