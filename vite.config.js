@@ -3,7 +3,7 @@ import path from "path";
 import { resolve } from "path";
 
 export default defineConfig({
-    base: "./", // Chemin de base pour votre application
+    base: "./", // Chemin relatif pour toutes les ressources
     build: {
         outDir: "dist",
         rollupOptions: {
