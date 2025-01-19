@@ -26,7 +26,7 @@ let mixer; // Pour gérer les animations
 const loader = new GLTFLoader();
 
 loader.load(
-    "./public/3dmodels/BabyElephant_GLB.glb",
+    "/3dmodels/BabyElephant_GLB.glb",
     function (gltf) {
         // console.log(gltf);
 
