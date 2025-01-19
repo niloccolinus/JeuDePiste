@@ -45,7 +45,7 @@
             <h1>Le cryptide du Nil</h1>
             <h2>Étape 2 - Le mystère s'épaissit</h2>
 
-            <section>
+            <section id="content">
                 <p>
                     Votre flair vous a permis de retrouver l'empreinte du cryptide. Vous avez déjà vu une image
                     similaire il y a bien longtemps, dans un article écrit par une cryptozoologiste de renom.
@@ -55,22 +55,27 @@
                     autrefois des conférences.
                 </p>
                 <hr />
+                <section id="answer-check" style="display: block">
+                    <form id="answer-form">
+                        <p>D'après les notes que vous retrouvez, de quoi se nourrit la bête ?</p>
+                        <label for="answer">Réponse :</label>
+                        <input type="password" id="answer" name="answer" />
+                        <button type="submit">Valider</button>
+                        <p id="error-message" style="display: none">Mauvaise réponse...</p>
+                    </form>
+                </section>
+
+                <section id="continue-section" style="display: none">
+                    <p>Bravo, vous avez résolu l'énigme !</p>
+                    <p>La bonne réponse était : <span id="correct-answer"></span></p>
+                    <a href="./step3.html" class="button-link">Continuer</a>
+                </section>
             </section>
 
-            <section id="answer-check" style="display: block">
-                <form id="answer-form">
-                    <p>D'après les notes que vous retrouvez, de quoi se nourrit la bête ?</p>
-                    <label for="answer">Réponse :</label>
-                    <input type="password" id="answer" name="answer" />
-                    <button type="submit">Valider</button>
-                    <p id="error-message" style="display: none">Mauvaise réponse...</p>
-                </form>
-            </section>
-
-            <section id="continue-section" style="display: none">
-                <p>Bravo, vous avez résolu l'énigme !</p>
-                <p>La bonne réponse était : <span id="correct-answer"></span></p>
-                <a href="./step3.html" class="button-link">Continuer</a>
+            <section id="locked-section" style="display: none; text-align: center">
+                <p>Vous n'avez pas encore déverrouillé cette étape.</p>
+                <hr />
+                <a href="./index.html" class="button-link">Retour à l'accueil</a>
             </section>
         </main>
 

@@ -51,25 +51,23 @@
                     aurait laissé une empreinte mystérieuse... saurez-vous la retrouver ?
                 </p>
                 <hr />
-            </section>
+                <section id="answer-check" style="display: block">
+                    <form id="answer-form">
+                        <p>Devant quel objet se situe-t-elle ?</p>
 
-            <section id="answer-check" style="display: block">
-                <form id="answer-form">
-                    <p>Devant quel objet se situe-t-elle ?</p>
-                    <div>
                         <label for="answer">Réponse :</label>
                         <input type="password" id="answer" name="answer" />
-                    </div>
 
-                    <button type="submit">Valider</button>
-                    <p id="error-message" style="display: none">Mauvaise réponse...</p>
-                </form>
-            </section>
+                        <button type="submit">Valider</button>
+                        <p id="error-message" style="display: none">Mauvaise réponse...</p>
+                    </form>
+                </section>
 
-            <section id="continue-section" style="display: none">
-                <p>Bravo, vous avez résolu l'énigme !</p>
-                <p>La bonne réponse était : <span id="correct-answer"></span></p>
-                <a href="./step2.html" class="button-link">Continuer</a>
+                <section id="continue-section" style="display: none">
+                    <p>Bravo, vous avez résolu l'énigme !</p>
+                    <p>La bonne réponse était : <span id="correct-answer"></span></p>
+                    <a href="./step2.html" class="button-link">Continuer</a>
+                </section>
             </section>
         </main>
 

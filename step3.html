@@ -56,22 +56,27 @@
                     vous le scannez avec votre téléphone, vous révélera son nom.
                 </p>
                 <hr />
+                <section id="answer-check" style="display: block">
+                    <form id="answer-form">
+                        <p>Quel est le nom du cryptide ?</p>
+                        <label for="answer">Réponse :</label>
+                        <input type="password" id="answer" name="answer" />
+                        <button type="submit">Valider</button>
+                    </form>
+                    <p id="error-message" style="display: none">Mauvaise réponse...</p>
+                </section>
+
+                <section id="continue-section" style="display: none">
+                    <p>Bravo, vous avez résolu l'énigme !</p>
+                    <p>La bonne réponse était : <span id="correct-answer"></span></p>
+                    <a href="./step4.html" class="button-link">Continuer</a>
+                </section>
             </section>
 
-            <section id="answer-check" style="display: block">
-                <form id="answer-form">
-                    <p>Quel est le nom du cryptide ?</p>
-                    <label for="answer">Réponse :</label>
-                    <input type="password" id="answer" name="answer" />
-                    <button type="submit">Valider</button>
-                </form>
-                <p id="error-message" style="color: red; display: none">Mauvaise réponse...</p>
-            </section>
-
-            <section id="continue-section" style="display: none">
-                <p>Bravo, vous avez résolu l'énigme !</p>
-                <p>La bonne réponse était : <span id="correct-answer"></span></p>
-                <a href="./step4.html" class="button-link">Continuer</a>
+            <section id="locked-section" style="display: none; text-align: center">
+                <p>Vous n'avez pas encore déverrouillé cette étape.</p>
+                <hr />
+                <a href="./index.html" class="button-link">Retour à l'accueil</a>
             </section>
         </main>
 

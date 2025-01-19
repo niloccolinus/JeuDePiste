@@ -26,6 +26,43 @@ const stepsData = [
     },
 ];
 
+// Exécuter les fonctions au chargement du DOM
+document.addEventListener("DOMContentLoaded", () => {
+    unlockFirstStep();
+    updateHeaderLinks();
+    handleStepLogic();
+    checkStepAccess();
+});
+
+// Vérifier si l'accès à l'étape est déverrouillé
+function checkStepAccess() {
+    const page = document.body.getAttribute("data-page");
+    if (!page) return;
+
+    // Trouver les données de l'étape actuelle
+    const currentStep = stepsData.find((step) => step.storageKey.startsWith(page));
+    if (!currentStep) return;
+
+    const isUnlocked = localStorage.getItem(currentStep.storageKey);
+
+    const lockedSection = document.getElementById("locked-section");
+    const contentSections = document.querySelectorAll("main > section:not(#locked-section)");
+
+    if (!lockedSection) {
+        return; // quitte la fonction si l'élément n'existe pas
+    }
+
+    if (!isUnlocked) {
+        // Si l'étape n'est pas déverrouillée, afficher la section "Accès non déverrouillé"
+        lockedSection.style.display = "flex";
+        contentSections.forEach((section) => (section.style.display = "none"));
+    } else {
+        // Si l'étape est déverrouillée, cacher la section "Accès non déverrouillé"
+        lockedSection.style.display = "none";
+        contentSections.forEach((section) => (section.style.display = "flex"));
+    }
+}
+
 // Fonction pour créer un hash du mot de passe saisi
 function getPasswordHash(pwd) {
     let pwdHash = 0;
@@ -157,10 +194,3 @@ function unlockStepLink(stepLink, step) {
         stepLink.innerHTML = step.href.match(/\d+/)[0].replace("step", ""); // Affiche le numéro de l'étape
     }
 }
-
-// Exécuter les fonctions au chargement du DOM
-document.addEventListener("DOMContentLoaded", () => {
-    unlockFirstStep();
-    updateHeaderLinks();
-    handleStepLogic();
-});

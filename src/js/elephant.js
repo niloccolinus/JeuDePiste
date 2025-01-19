@@ -72,7 +72,8 @@ renderer.xr.enabled = true;
 const mainElement = document.querySelector("main");
 const arSection = document.getElementById("ar-section");
 const arButton = ARButton.createButton(renderer);
-arButton.removeAttribute("style"); // Réinitialise les styles
+arButton.removeAttribute("style"); // Supprime les styles en ligne par défaut
+arButton.classList.add("custom-ar-button");
 
 arSection.appendChild(arButton);
 mainElement.appendChild(renderer.domElement);
