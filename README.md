@@ -25,3 +25,18 @@ Le jeu fait appel à diverses fonctionnalités du web moderne telles que défini
 
 - L'utilisation de l'AR requiert un navigateur chrome ou chromium et un téléphone prenant en charge ces fonctionnalités.
 - L'utilisation de la technologie NFC requiert un téléphone mobile compatible.
+
+## Solutions
+
+<details>
+  <summary>Voir réponse étape 1</summary>
+  distributeur
+</details>
+<details>
+  <summary>Voir réponse étape 2</summary>
+  tartiflette
+</details>
+<details>
+  <summary>Voir réponse étape 3</summary>
+  nessie
+</details>
