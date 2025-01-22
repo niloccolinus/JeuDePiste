@@ -3,7 +3,7 @@ import { ARButton } from "three/examples/jsm/webxr/ARButton.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 const width = window.innerWidth,
-    height = window.innerHeight;
+  height = window.innerHeight;
 
 // caméra
 const camera = new THREE.PerspectiveCamera(70, width / height, 0.5, 10);
@@ -26,44 +26,44 @@ let mixer; // Pour gérer les animations
 const loader = new GLTFLoader();
 
 loader.load(
-    "/3dmodels/BabyElephant_GLB.glb",
-    function (gltf) {
-        // console.log(gltf);
+  "/3dmodels/BabyElephant_GLB.glb",
+  function (gltf) {
+    // console.log(gltf);
 
-        elephant = gltf.scene; // Chargement du modèle
-        scene.add(elephant);
+    elephant = gltf.scene; // Chargement du modèle
+    scene.add(elephant);
 
-        // Calculer les dimensions pour centrer le modèle
-        const box = new THREE.Box3().setFromObject(elephant);
-        const size = new THREE.Vector3();
-        box.getSize(size);
-        const center = new THREE.Vector3();
-        box.getCenter(center);
+    // Calculer les dimensions pour centrer le modèle
+    const box = new THREE.Box3().setFromObject(elephant);
+    const size = new THREE.Vector3();
+    box.getSize(size);
+    const center = new THREE.Vector3();
+    box.getCenter(center);
 
-        elephant.position.set(-center.x + 1, -center.y, -2); // ajustement de la position
-        elephant.scale.set(1, 1, 1);
+    elephant.position.set(-center.x + 1, -center.y, -2); // ajustement de la position
+    elephant.scale.set(1, 1, 1);
 
-        // Initialisation du mixer pour les animations
-        mixer = new THREE.AnimationMixer(elephant);
+    // Initialisation du mixer pour les animations
+    mixer = new THREE.AnimationMixer(elephant);
 
-        // Charger les animations à partir du fichier GLTF
-        if (gltf.animations.length > 0) {
-            const action = mixer.clipAction(gltf.animations[0]); // première animation
-            action.setEffectiveTimeScale(1); // Vitesse normale
-            action.play();
-        } else {
-            console.warn("Aucune animation trouvée dans le fichier GLTF.");
-        }
-    },
-    undefined,
-    function (error) {
-        console.error("Erreur lors du chargement du modèle :", error);
+    // Charger les animations à partir du fichier GLTF
+    if (gltf.animations.length > 0) {
+      const action = mixer.clipAction(gltf.animations[0]); // première animation
+      action.setEffectiveTimeScale(1); // Vitesse normale
+      action.play();
+    } else {
+      console.warn("Aucune animation trouvée dans le fichier GLTF.");
     }
+  },
+  undefined,
+  function (error) {
+    console.error("Erreur lors du chargement du modèle :", error);
+  }
 );
 
 const renderer = new THREE.WebGLRenderer({
-    antialias: true,
-    alpha: true,
+  antialias: true,
+  alpha: true,
 });
 
 renderer.setSize(width, height);
@@ -82,12 +82,12 @@ mainElement.appendChild(renderer.domElement);
 let previousTime = 0;
 
 renderer.setAnimationLoop((time) => {
-    const delta = time - previousTime;
-    previousTime = time; // Mettre à jour le temps précédent
+  const delta = time - previousTime;
+  previousTime = time; // Mettre à jour le temps précédent
 
-    if (mixer) {
-        mixer.update(delta * 0.001); // Mettre à jour l'animation
-    }
+  if (mixer) {
+    mixer.update(delta * 0.001); // Mettre à jour l'animation
+  }
 
-    renderer.render(scene, camera);
+  renderer.render(scene, camera);
 });
