@@ -70,10 +70,16 @@ renderer.setSize(width, height);
 renderer.xr.enabled = true;
 
 const mainElement = document.querySelector("main");
-const arSection = document.getElementById("ar-section");
-const arButton = ARButton.createButton(renderer);
-arButton.removeAttribute("style"); // Supprime les styles en ligne par défaut
-arButton.classList.add("custom-ar-button");
+
+function createARButton(enabled) {
+  if (enabled) {
+    const arSection = document.getElementById("ar-section");
+    const arButton = ARButton.createButton(renderer);
+    arButton.removeAttribute("style"); // Supprime les styles en ligne par défaut
+    arButton.classList.add("custom-ar-button");
+    arSection.appendChild(arButton);
+  }
+}
 
 /*
 arSection.appendChild(arButton);
@@ -84,7 +90,7 @@ mainElement.appendChild(renderer.domElement);
 if (navigator.xr) {
   // Vérifie la disponibilité du mode immersive-ar
   navigator.xr.isSessionSupported("immersive-ar").then((supported) => {
-    arSection.appendChild(arButton); // Ajoute le bouton à l'élément arSection si immersive-ar est disponible
+    createARButton(supported); // crée un bouton de réalité augmentée si la fonctionnalité est disponible
     mainElement.appendChild(renderer.domElement); // Ajoute le canvas avec la scène 3D à l'élément main sinon
   });
 } else {
