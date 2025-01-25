@@ -86,7 +86,7 @@ section form button,
     padding: 10px;
     font-size: 15px;
     font-family: "Onest";
-    width: fit-content;
+    width: fit-content !important;
     cursor: pointer;
 }
 
@@ -98,7 +98,6 @@ section form button,
 }
 
 .custom-ar-button {
-    all: unset;
     display: inline-block;
     position: relative;
     padding: 10px 20px;
